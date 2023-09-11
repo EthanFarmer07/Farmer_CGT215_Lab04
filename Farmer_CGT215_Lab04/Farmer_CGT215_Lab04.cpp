@@ -66,7 +66,8 @@ void arithmetic() {
 
 	cout << startNumber << " + ";
 	for (int i = 1; i <= (seriesNumber - 1); ++i) {
-		holder = startNumber + incrementNumber;
+		startNumber += incrementNumber;
+		holder = startNumber;
 		cout << holder << " + ";
 	}
 	cout << holder;
