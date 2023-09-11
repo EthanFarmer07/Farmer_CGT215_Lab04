@@ -14,7 +14,23 @@ void printMenu() {
 	cout << "Your Selection: ";
 }
 void factorial() {
-	// I recommend writing your factorial code here
+	int posNumber; // Holder for user submited number.
+	long factorial = 1.0;
+
+	cout << "Enter a positive number: ";
+	cin >> posNumber;
+
+	// If statment to check if the number is less tha 1.
+	if (posNumber < 0) {
+		cout << "Error! You have entered a negative number.\n";
+		cout << "Factorials of a negative number do not exist.";
+	}
+	else {
+		for (int i = 1; i <= posNumber; ++i) {
+			factorial *= i;
+		}
+		cout << "Factorial of " << posNumber << " = " << factorial;
+	}
 }
 void arithmetic() {
 	// I recommend writing your arithmetic series code here
@@ -39,6 +55,9 @@ int main() {
 			arithmetic();
 		}
 		else if (choice == 3) {
+			geometric();
+		}
+		else if (choice == 4) {
 			geometric();
 		}
 		cout << "Go Again? [Y/N] ";
