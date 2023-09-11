@@ -14,7 +14,7 @@ void printMenu() {
 	cout << "Your Selection: ";
 }
  void factorial() {
-	unsigned int posNumber; // Variable holder for user submited number.
+	int posNumber; // Variable holder for user submited number.
 	float factorial = 1.0; // Used for starting factoral calculation.
 	/*
 	* Done is a variable to stop the while loop after acceptable user input is given. 
