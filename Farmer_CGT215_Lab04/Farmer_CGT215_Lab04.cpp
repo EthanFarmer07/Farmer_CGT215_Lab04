@@ -13,26 +13,32 @@ void printMenu() {
 	cout << "\t4. Exit" << endl;
 	cout << "Your Selection: ";
 }
-void factorial() {
+ void factorial() {
 	int posNumber; // Holder for user submited number.
-	long factorial = 1.0; // Used for starting factoral calculation.
+	float factorial = 1.0; // Used for starting factoral calculation.
 
+	cout << "Factorial:\n";
 	cout << "Enter a positive number: ";
 	cin >> posNumber;
-
+	
 	// If statment to check if the number is less than 1.
 	if (posNumber < 0) {
 		cout << "Error! You have entered a negative number.\n";
-		cout << "Factorials of a negative number do not exist.";
+		cout << "Factorials of a negative number do not exist.\n";
 	}
-	else {
+	else if (posNumber == 0 || posNumber == 1) {
+		cout << posNumber << "! is = 1\n";
+	}
+	else if (posNumber > 1) {
 		// Calculation of the factoral number.
+		cout << posNumber << "! = ";
 		for (int i = 1; i <= posNumber; ++i) {
 			factorial *= i;
+			cout << i << " * ";
 		}
-		// Output the answer of the factorial.
-		cout << "Factorial of " << posNumber << " = " << factorial;
+		cout << "= " << factorial << "\n";
 	}
+	
 }
 void arithmetic() {
 	// I recommend writing your arithmetic series code here
@@ -47,7 +53,7 @@ int main() {
 		printMenu();
 		cin >> choice;
 		// Outputs message for any invalid choice. Then prompts the user to chose again.
-		if (choice > 3 || choice < 1) {
+		if (choice > 4 || choice < 1) {
 			cout << "Invalid input recieved!\n";
 		}
 		else if (choice == 1) {
@@ -60,9 +66,10 @@ int main() {
 			geometric();
 		}
 		else if (choice == 4) {
-			geometric();
+			return 0;
 		}
 		cout << "Chose Again? [Y/N] ";
 		cin >> again;
+		cout << "\n";
 	} while (again == 'y' || again == 'Y');
 }
