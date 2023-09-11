@@ -14,34 +14,52 @@ void printMenu() {
 	cout << "Your Selection: ";
 }
  void factorial() {
-	int posNumber; // Holder for user submited number.
+	unsigned int posNumber; // Variable holder for user submited number.
 	float factorial = 1.0; // Used for starting factoral calculation.
+	/*
+	* Done is a variable to stop the while loop after acceptable user input is given. 
+	* I could not figure out how to stop the loop using posNumber (the user asigned number).
+	* So we have an extra variable.
+	*/
+	int done = 0;
 
 	cout << "Factorial:\n";
 	cout << "Enter a positive number: ";
 	cin >> posNumber;
-	
-	// If statment to check if the number is less than 1.
-	if (posNumber < 0) {
-		cout << "Error! You have entered a negative number.\n";
-		cout << "Factorials of a negative number do not exist.\n";
-	}
-	else if (posNumber == 0 || posNumber == 1) {
-		cout << posNumber << "! is = 1\n";
-	}
-	else if (posNumber > 1) {
-		// Calculation of the factoral number.
-		cout << posNumber << "! = ";
-		for (int i = 1; i <= posNumber; ++i) {
-			factorial *= i;
-			cout << i << " * ";
+	do {
+		// Checks if number is within acceptable range.
+		if (posNumber > 1) {
+			// Calculation of the factoral number.
+			for (int i = 1; i <= posNumber; ++i) {
+				factorial *= i;
+				cout << i << " * ";
+			}
+			cout << posNumber << "! = ";
+			cout << "= " << factorial << "\n";
+			done = 1;
 		}
-		cout << "= " << factorial << "\n";
-	}
-	
+		else if (posNumber == 0 || posNumber == 1) {
+			cout << posNumber << "! is = 1\n";
+			done = 1;
+		}
+		else if (posNumber < 0) {
+			cout << "Error! You have entered a negative number.\n";
+			cout << "Factorials of a negative number do not exist.\n";
+			cout << "Enter a positive number: ";
+			cin >> posNumber;
+		}
+	} while (done != 1);
 }
 void arithmetic() {
-	// I recommend writing your arithmetic series code here
+	/*
+	unsigned int startNumber; // User asigned number for starting.
+	unsigned int incrementNumber; // User asigned number for calculating difference.
+	unsigned int seriesNumber; // User asigned number for how many iterations.
+
+	cout << "Arithmetic Series:\n";
+	cout << "Enter a number to start from: ";
+	cin >> startNumber;
+	*/
 }
 void geometric() {
 	// I recommend writing your geometric series code here
@@ -68,8 +86,7 @@ int main() {
 		else if (choice == 4) {
 			return 0;
 		}
-		cout << "Chose Again? [Y/N] ";
+		cout << "\nChose Again? [Y/N] ";
 		cin >> again;
-		cout << "\n";
 	} while (again == 'y' || again == 'Y');
 }
