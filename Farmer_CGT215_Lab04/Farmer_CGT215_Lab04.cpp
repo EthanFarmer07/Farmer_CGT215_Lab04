@@ -69,6 +69,7 @@ void arithmetic() {
 		holder = startNumber + incrementNumber;
 		cout << holder << " + ";
 	}
+	cout << holder;
 }
 void geometric() {
 	// I recommend writing your geometric series code here
