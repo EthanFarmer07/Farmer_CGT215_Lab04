@@ -15,20 +15,22 @@ void printMenu() {
 }
 void factorial() {
 	int posNumber; // Holder for user submited number.
-	long factorial = 1.0;
+	long factorial = 1.0; // Used for starting factoral calculation.
 
 	cout << "Enter a positive number: ";
 	cin >> posNumber;
 
-	// If statment to check if the number is less tha 1.
+	// If statment to check if the number is less than 1.
 	if (posNumber < 0) {
 		cout << "Error! You have entered a negative number.\n";
 		cout << "Factorials of a negative number do not exist.";
 	}
 	else {
+		// Calculation of the factoral number.
 		for (int i = 1; i <= posNumber; ++i) {
 			factorial *= i;
 		}
+		// Output the answer of the factorial.
 		cout << "Factorial of " << posNumber << " = " << factorial;
 	}
 }
@@ -44,9 +46,9 @@ int main() {
 	do {
 		printMenu();
 		cin >> choice;
-		// Quit if user chooses to exit (or any invalid choice)
+		// Outputs message for any invalid choice. Then prompts the user to chose again.
 		if (choice > 3 || choice < 1) {
-			return 0;
+			cout << "Invalid input recieved!\n";
 		}
 		else if (choice == 1) {
 			factorial();
@@ -60,7 +62,7 @@ int main() {
 		else if (choice == 4) {
 			geometric();
 		}
-		cout << "Go Again? [Y/N] ";
+		cout << "Chose Again? [Y/N] ";
 		cin >> again;
 	} while (again == 'y' || again == 'Y');
 }
