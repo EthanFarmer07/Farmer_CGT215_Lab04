@@ -58,10 +58,16 @@ void arithmetic() {
 	cout << "Arithmetic Series:\n";
 	cout << "Enter a number to start from: ";
 	cin >> startNumber;
-	cout << "Enter a number to start from: ";
+	cout << "Enter a number to add each time: ";
 	cin >> incrementNumber;
-	cout << "Enter a number to start from: ";
+	cout << "Enter a number of elements in the series: ";
 	cin >> seriesNumber;
+
+	cout << startNumber << " + ";
+	for (int i = 1; i <= (seriesNumber - 1); ++i) {
+		startNumber += incrementNumber;
+		cout << startNumber << " + ";
+	}
 }
 void geometric() {
 	// I recommend writing your geometric series code here
@@ -72,9 +78,10 @@ int main() {
 	do {
 		printMenu();
 		cin >> choice;
-		// Outputs message for any invalid choice. Then prompts the user to chose again.
-		if (choice > 4 || choice < 1) {
-			cout << "Invalid input recieved!\n";
+
+		// Quit if user chooses to exit (or any invalid choice)
+		if (choice > 3 || choice < 1) {
+			return 0;
 		}
 		else if (choice == 1) {
 			factorial();
@@ -85,9 +92,7 @@ int main() {
 		else if (choice == 3) {
 			geometric();
 		}
-		else if (choice == 4) {
-			return 0;
-		}
+
 		cout << "\nChose Again? [Y/N] ";
 		cin >> again;
 	} while (again == 'y' || again == 'Y');
