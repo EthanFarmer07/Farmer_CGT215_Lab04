@@ -54,6 +54,7 @@ void arithmetic() {
 	int startNumber; // User asigned number for starting.
 	int incrementNumber; // User asigned number for calculating difference.
 	int seriesNumber; // User asigned number for how many iterations.
+	int holder;
 
 	cout << "Arithmetic Series:\n";
 	cout << "Enter a number to start from: ";
@@ -65,8 +66,8 @@ void arithmetic() {
 
 	cout << startNumber << " + ";
 	for (int i = 1; i <= (seriesNumber - 1); ++i) {
-		startNumber += incrementNumber;
-		cout << startNumber << " + ";
+		holder = startNumber + incrementNumber;
+		cout << holder << " + ";
 	}
 }
 void geometric() {
@@ -78,10 +79,9 @@ int main() {
 	do {
 		printMenu();
 		cin >> choice;
-
-		// Quit if user chooses to exit (or any invalid choice)
-		if (choice > 3 || choice < 1) {
-			return 0;
+		// Outputs message for any invalid choice. Then prompts the user to chose again.
+		if (choice > 4 || choice < 1) {
+			cout << "Invalid input recieved!\n";
 		}
 		else if (choice == 1) {
 			factorial();
@@ -92,7 +92,9 @@ int main() {
 		else if (choice == 3) {
 			geometric();
 		}
-
+		else if (choice == 4) {
+			return 0;
+		}
 		cout << "\nChose Again? [Y/N] ";
 		cin >> again;
 	} while (again == 'y' || again == 'Y');
