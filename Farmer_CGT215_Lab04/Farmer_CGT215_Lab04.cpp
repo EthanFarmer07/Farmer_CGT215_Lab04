@@ -51,7 +51,6 @@ void printMenu() {
 	} while (done != 1);
 }
 void arithmetic() {
-	/*
 	unsigned int startNumber; // User asigned number for starting.
 	unsigned int incrementNumber; // User asigned number for calculating difference.
 	unsigned int seriesNumber; // User asigned number for how many iterations.
@@ -59,7 +58,6 @@ void arithmetic() {
 	cout << "Arithmetic Series:\n";
 	cout << "Enter a number to start from: ";
 	cin >> startNumber;
-	*/
 }
 void geometric() {
 	// I recommend writing your geometric series code here
