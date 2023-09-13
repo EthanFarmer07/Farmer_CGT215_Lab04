@@ -53,14 +53,17 @@ void printMenu() {
 			cout << "Enter a positive number: ";
 			cin >> posNumber;
 		}
-	} while (done != 1);
+	} while (done != 1); // Used if the user enterd number is negative.
 }
+
+// Get math to acctually add the series.
 void arithmetic() {
 	int startNumber; // User asigned number for starting.
 	int incrementNumber; // User asigned number for calculating difference.
 	int seriesNumber; // User asigned number for how many iterations.
-	int holder;
+	int holder; // Used for storing the running total.
 
+	// Asks user for input.
 	cout << "Arithmetic Series:\n";
 	cout << "Enter a number to start from: ";
 	cin >> startNumber;
@@ -69,19 +72,45 @@ void arithmetic() {
 	cout << "Enter a number of elements in the series: ";
 	cin >> seriesNumber;
 
+	// Print the starting number for showing the series.
 	cout << startNumber << " + ";
-	for (int i = 0; i <= (seriesNumber - 1); ++i) {
+	// Runs the calculations for returning an answer.
+	for (int i = 0; i < (seriesNumber - 1); ++i) {
 		startNumber += incrementNumber;
-		holder = startNumber;
+		holder = holder + startNumber;
 		cout << startNumber;
 		if (i < seriesNumber) {
 			cout << " + ";
 		}
 	}
-	cout << holder;
+	cout << " = " << holder;
 }
 void geometric() {
-	// I recommend writing your geometric series code here
+	float sum = 0; // Total number after calculations.
+	float a; // First term in series.
+	float r; // Common ratio.
+	int seriesNumber; // User asigned number for how many iterations.
+	
+	// Asks user for input.
+	cout << "Arithmetic Series:\n";
+	cout << "Enter a number for first term: ";
+	cin >> a;
+	cout << "Enter a number as the commmon ratio: ";
+	cin >> r;
+	cout << "Enter a number of elements in the series: ";
+	cin >> seriesNumber;
+	
+	cout << a << " + ";
+	for (int i = 0; i < seriesNumber; ++i) {
+		
+		sum = sum * pow(r,i);
+		a = a + r;
+
+		if (i < seriesNumber) {
+			cout << " + ";
+		}
+	}
+	cout << sum + a;
 }
 int main() {
 	int choice;
