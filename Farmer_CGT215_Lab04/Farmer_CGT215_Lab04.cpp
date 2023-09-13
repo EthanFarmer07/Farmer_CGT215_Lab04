@@ -41,10 +41,12 @@ void printMenu() {
 			cout << " = " << factorial << "\n";
 			done = 1;
 		}
+		// Error handling for if the number is 0 or 1.
 		else if (posNumber == 0 || posNumber == 1) {
 			cout << posNumber << "! is = 1\n";
 			done = 1;
 		}
+		// Error handling for if the number is a negative.
 		else if (posNumber < 0) {
 			cout << "Error! You have entered a negative number.\n";
 			cout << "Factorials of a negative number do not exist.\n";
@@ -68,10 +70,13 @@ void arithmetic() {
 	cin >> seriesNumber;
 
 	cout << startNumber << " + ";
-	for (int i = 1; i <= (seriesNumber - 1); ++i) {
+	for (int i = 0; i <= (seriesNumber - 1); ++i) {
 		startNumber += incrementNumber;
 		holder = startNumber;
-		cout << holder << " + ";
+		cout << startNumber;
+		if (i < seriesNumber) {
+			cout << " + ";
+		}
 	}
 	cout << holder;
 }
