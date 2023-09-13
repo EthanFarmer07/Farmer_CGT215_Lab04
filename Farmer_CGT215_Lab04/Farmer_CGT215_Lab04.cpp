@@ -29,13 +29,16 @@ void printMenu() {
 	do {
 		// Checks if number is within acceptable range.
 		if (posNumber > 1) {
+			cout << posNumber << "! = ";
 			// Calculation of the factoral number.
 			for (int i = 1; i <= posNumber; ++i) {
 				factorial *= i;
-				cout << i << " * ";
+				cout << i;
+				if (i < posNumber ) {
+					cout << " * ";
+				}
 			}
-			cout << posNumber << "! = ";
-			cout << "= " << factorial << "\n";
+			cout << " = " << factorial << "\n";
 			done = 1;
 		}
 		else if (posNumber == 0 || posNumber == 1) {
