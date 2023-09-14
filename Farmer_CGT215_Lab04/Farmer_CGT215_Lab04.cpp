@@ -60,6 +60,7 @@ void arithmetic() {
 	int startNumber; // User asigned number for starting.
 	int incrementNumber; // User asigned number for calculating difference.
 	int seriesNumber; // User asigned number for how many iterations.
+	int holdStart = 0; // Variable to hold the starting number for ending calculations.
 	int total = 0; // Used for storing the running total.
 
 	// Asks the user for input.
@@ -71,15 +72,18 @@ void arithmetic() {
 	cout << "Enter a number of elements in the series: ";
 	cin >> seriesNumber;
 
+	// Puts in to a referenced memory point so that ending calculations are correct.
+	holdStart = startNumber;
+
 	// Print the starting number for showing the series.
 	cout << startNumber << " + ";
 	// Runs the calculations for returning an answer.
-	for (int i = 1; i <= (seriesNumber - 1); ++i) {
-		cout << startNumber << " + "; // Outputs the number for series.
+	for (int i = 1; i < seriesNumber; ++i) {
 		startNumber += incrementNumber; // Calculates the arithmetic progression.
 		total += startNumber; // Saves number for series total.
+		cout << startNumber << " + "; // Outputs the number for series.
 	}
-	cout << " = " << (total + startNumber) << "\n";
+	cout << " = " << (total + holdStart) << "\n";
 }
 void geometric() {
 	float sum = 0; // Total number after calculations.
