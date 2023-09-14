@@ -24,6 +24,7 @@ void printMenu() {
 	int done = 0;
 
 	cout << "Factorial:\n";
+	// Ask user input.
 	cout << "Enter a positive number: ";
 	cin >> posNumber;
 	do {
@@ -39,7 +40,7 @@ void printMenu() {
 				}
 			}
 			cout << " = " << factorial << "\n";
-			done = 1;
+			done = 1; // Kills the while loop.
 		}
 		// Error handling for if the number is 0 or 1.
 		else if (posNumber == 0 || posNumber == 1) {
@@ -74,9 +75,9 @@ void arithmetic() {
 	cout << startNumber << " + ";
 	// Runs the calculations for returning an answer.
 	for (int i = 1; i <= (seriesNumber - 1); ++i) {
-		startNumber += incrementNumber;
-		total += startNumber;
-		cout << startNumber << " + ";
+		cout << startNumber << " + "; // Outputs the number for series.
+		startNumber += incrementNumber; // Calculates the arithmetic progression.
+		total += startNumber; // Saves number for series total.
 	}
 	cout << " = " << (total + startNumber) << "\n";
 }
