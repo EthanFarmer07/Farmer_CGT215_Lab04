@@ -63,8 +63,8 @@ void arithmetic() {
 	int holdStart = 0; // Variable to hold the starting number for ending calculations.
 	int total = 0; // Used for storing the running total.
 
-	// Asks the user for input.
 	cout << "Arithmetic Series:\n";
+	// Asks the user for input.
 	cout << "Enter a number to start from: ";
 	cin >> startNumber;
 	cout << "Enter a number to add each time: ";
@@ -90,8 +90,8 @@ void geometric() {
 	float r; // Common ratio.
 	int seriesNumber; // User asigned number for how many iterations.
 
+	cout << "Geometric Series:\n";
 	// Asks user for input.
-	cout << "Arithmetic Series:\n";
 	cout << "Enter a number for first term: ";
 	cin >> a;
 	cout << "Enter a number as the commmon ratio: ";
@@ -101,15 +101,16 @@ void geometric() {
 
 	// Print the starting number for showing the series.
 	cout << a << " + ";
-	for (int i = 0; i < seriesNumber; ++i) {
+	for (int i = 0; i < (seriesNumber - 1); ++i) {
 
-		sum = sum * pow(r, i);
-		a = a + r;
-
-		if (i < seriesNumber) {
-			cout << " + ";
+		sum = sum + a; // Stores number for printing series total.
+		a = a * r;
+		cout << a; // Prints the number for the series.
+		if (i < (seriesNumber - 2)) {
+			cout << " + "; // Prints a plus sign after each term in the series.
 		}
 	}
+	cout << " = " << (sum + a) << "\n"; // Prints the total number after all calulations are completed.
 }
 int main() {
 	int choice;
