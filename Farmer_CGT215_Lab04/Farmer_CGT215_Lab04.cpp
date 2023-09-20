@@ -75,15 +75,14 @@ void arithmetic() {
 	// Puts in to a referenced memory point so that ending calculations are correct.
 	holdStart = startNumber;
 
-	// Print the starting number for showing the series.
-	cout << startNumber << " + ";
 	// Runs the calculations for returning an answer.
-	for (int i = 1; i < seriesNumber; ++i) {
-		startNumber += incrementNumber; // Calculates the arithmetic progression.
-		total += startNumber; // Saves number for series total.
+	for (int i = 1; i <= (seriesNumber - 1); ++i) {
 		cout << startNumber << " + "; // Outputs the number for series.
+		startNumber += incrementNumber; // Calculates the arithmetic progression.
+		total += startNumber; // Stores number for printing series total.
 	}
-	cout << " = " << (total + holdStart) << "\n";
+	cout << startNumber; // Prints the final number in the series without a plus sign after it.
+	cout << " = " << (total + holdStart) << "\n"; // Prints the total number after all calulations are completed.
 }
 void geometric() {
 	float sum = 0; // Total number after calculations.
